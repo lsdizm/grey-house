@@ -27,25 +27,22 @@
       <v-navigation-drawer                
         permanent>
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-home" title="grey house" :to="{name:home}">
-            <!-- <template v-slot:append>
-              <v-btn
-                variant="text"
-                icon="mdi-chevron-left"
-                @click.stop="rail = !rail">
-              </v-btn>
-            </template> -->
-          </v-list-item>
-
-          <v-list-item prepend-icon="md:event" title="calenda" />
+          <v-list-item prepend-icon="mdi-chart-areaspline" title="업무현황" router :to="{name:'dashboard'}"/>
         </v-list>
-
-        <v-divider/>
-
+        <v-divider/>        
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles" :to="{name:about}"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
+          <v-list-item prepend-icon="mdi-package-variant-closed" title="물품" router :to="{name:'productItem'}"/>          
+          <v-list-item prepend-icon="mdi-file-move" title="입고" router :to="{name:'stockIn'}"/>          
+          <v-list-item prepend-icon="mdi-file-move-outline" title="출고" router :to="{name:'stockOut'}"/>          
+        </v-list>
+        <v-divider/>        
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="mdi-sigma" title="통계" router :to="{name:'statistic'}"/>          
+          <v-list-item prepend-icon="mdi-factory" title="설정" router :to="{name:'environment'}"/>                    
+        </v-list>
+        <v-divider/>        
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="mdi-home" title="정보" router :to="{name:'home'}"/>
         </v-list>
       </v-navigation-drawer>
       <v-main>
@@ -57,10 +54,12 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-
+import { createApp  } from 'vue';
 // Components
 
-export default defineComponent({  
+export default createApp ({  
+  theme:{
+    defaultTheme: 'dark'
+  }
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-      <h1>홈...?</h1>
+      <h1>데쉬보드</h1>
     </div>
   </template>
   

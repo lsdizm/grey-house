@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import HelloWorld from '../components/HelloWorld.vue'
+import Home from '../views/HomeView.vue'
 
 const routes = [
   { path: '/', name: 'home', component: () => Home },
   { path: '/about', name: 'about', component: () => import('../views/AboutView.vue') },
+  { path: '/dashboard', name: 'dashboard', component: () => import('../views/DashBoardView.vue') },
+  { path: '/product-item', name: 'productItem', component: () => import('../views/ProductItemView.vue') },
+  { path: '/stock-in', name: 'stockIn', component: () => import('../views/StockInView.vue') },
+  { path: '/stock-out', name: 'stockOut', component: () => import('../views/StockOutView.vue') },
+  { path: '/statistic', name: 'statistic', component: () => import('../views/StatisticView.vue') },
+  { path: '/environment', name: 'environment', component: () => import('../views/EnvironmentView.vue') },
+  
   // {
   //   path: '/dashboard',
   //   name: 'dashboard',
