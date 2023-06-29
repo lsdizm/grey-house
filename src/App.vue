@@ -4,7 +4,7 @@
       dark
       prominent
       density="comfortable">      
-      <v-app-bar-nav-icon/>
+      <v-app-bar-nav-icon  variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>grey house</v-toolbar-title>
       <v-spacer/>      
       <v-btn icon>
@@ -24,8 +24,12 @@
     </v-toolbar>  
   
     <v-layout>
-      <v-navigation-drawer                
-        permanent>
+      <v-navigation-drawer      
+        v-model="drawer"
+        rail        
+        expand-on-hover
+        clipped        
+        app>
         <v-list density="compact" nav>
           <v-list-item prepend-icon="mdi-chart-areaspline" title="업무현황" router :to="{name:'dashboard'}" exact/>
         </v-list>
@@ -54,12 +58,15 @@
 </template>
 
 <script>
-import { createApp  } from 'vue';
+//import { createApp  } from 'vue';
 // Components
 
-export default createApp ({  
-  theme:{
-    defaultTheme: 'dark'
+export default{  
+  data(){
+    return {
+      drawer: true,
+      ttt:'저저정'
+    }
   }
-});
+}
 </script>
