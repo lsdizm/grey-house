@@ -1,0 +1,1 @@
+sudo cp -r /home/ubuntu/source/grey-house/dist /var/www/html
