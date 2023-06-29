@@ -27,22 +27,22 @@
       <v-navigation-drawer                
         permanent>
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-chart-areaspline" title="업무현황" router :to="{name:'dashboard'}"/>
+          <v-list-item prepend-icon="mdi-chart-areaspline" title="업무현황" router :to="{name:'dashboard'}" exact/>
         </v-list>
         <v-divider/>        
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-package-variant-closed" title="물품" router :to="{name:'productItem'}"/>          
-          <v-list-item prepend-icon="mdi-file-move" title="입고" router :to="{name:'stockIn'}"/>          
-          <v-list-item prepend-icon="mdi-file-move-outline" title="출고" router :to="{name:'stockOut'}"/>          
+          <v-list-item prepend-icon="mdi-package-variant-closed" title="물품" router :to="{name:'productItem'}" exact/>
+          <v-list-item prepend-icon="mdi-file-move" title="입고" router :to="{name:'stockIn'}" exact/>
+          <v-list-item prepend-icon="mdi-file-move-outline" title="출고" router :to="{name:'stockOut'}" exact/>
         </v-list>
         <v-divider/>        
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-sigma" title="통계" router :to="{name:'statistic'}"/>          
-          <v-list-item prepend-icon="mdi-factory" title="설정" router :to="{name:'environment'}"/>                    
+          <v-list-item prepend-icon="mdi-sigma" title="통계" router :to="{name:'statistic'}" exact/>
+          <v-list-item prepend-icon="mdi-factory" title="설정" router :to="{name:'environment'}" exact/>
         </v-list>
         <v-divider/>        
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-home" title="정보" router :to="{name:'home'}"/>
+          <v-list-item prepend-icon="mdi-home" title="정보" router :to="{name:'home'}" exact/>
         </v-list>
       </v-navigation-drawer>
       <v-main>
