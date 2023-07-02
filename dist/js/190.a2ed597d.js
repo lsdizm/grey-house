@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkgrey_house"]=self["webpackChunkgrey_house"]||[]).push([[190],{9190:function(e,n,u){u.r(n),u.d(n,{default:function(){return i}});var r=u(3396);const s={class:"about"},t=(0,r._)("h1",null,"통계",-1),c=[t];function a(e,n){return(0,r.wg)(),(0,r.iD)("div",s,c)}var o=u(89);const f={},h=(0,o.Z)(f,[["render",a]]);var i=h}}]);
-//# sourceMappingURL=190.8a1700cf.js.map
+//# sourceMappingURL=190.a2ed597d.js.map

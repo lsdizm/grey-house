@@ -9,7 +9,6 @@ import axios from 'axios'
 
 loadFonts()
 
-
 //createApp(App).use(router).use(store).use(vuetify).mount('#app')
 
 const app = createApp(App)
