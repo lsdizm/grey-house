@@ -26,7 +26,6 @@
     <v-layout>
       <v-navigation-drawer      
         v-model="drawer"
-        rail        
         expand-on-hover
         clipped        
         app>
