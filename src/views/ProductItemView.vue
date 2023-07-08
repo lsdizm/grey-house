@@ -50,14 +50,7 @@
     </v-layout>
   </v-container>
 </template>
-<!-- 
-    <div class="about">
-      <h1>물품관리</h1>
-      
-    </div>
-  </template> -->
   <script>
-  //import axios from 'axios'
   export default{
     data() {
       return {
@@ -66,19 +59,29 @@
     },
     methods:{
       onSearchClick() {
-        this.axios
-          .get("https://localhost:8090/ProductItem")
-          .then((response) =>{
-            this.productItems = response.data
-            // this.productItems = [{
-            //   id : 1,
-            //   title:"물품"
-            // }] 
-          })
-          .catch((error) =>{
-          })
-          .finally(() =>{
-          })
+        this.productItems = [{
+          id : 1,
+          sequence : 1,
+          code: '8806538014616',
+          title:"신일티아민염산염정 10mg",
+          amount: 30
+        },
+        {
+          id : 2,
+          sequence : 2,
+          code: '8806538012316',
+          title:"신일티아민염산염정 20mg",
+          amount: 200
+        }]
+        // this.axios
+        //   .get("https://localhost:8090/ProductItem")
+        //   .then((response) =>{
+        //     this.productItems = response.data
+        //   })
+        //   .catch((error) =>{
+        //   })
+        //   .finally(() =>{
+        //   })
       }
     },
 
