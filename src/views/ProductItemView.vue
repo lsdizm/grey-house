@@ -27,7 +27,8 @@
         <tbody>
           <tr
             v-for="item in productItems"
-            :key="item.id">
+            :key="item.id"
+            @click="onSelectProductItem(item)">
             <td>{{ item.sequence }}</td>
             <td>{{ item.code }}</td>
             <td>{{ item.name }}</td>
@@ -39,10 +40,10 @@
       <v-spacer/>      
         <v-card
           style="width:65%"
-          title="신일티아민염산염정 10mg"
-          subtitle="#신일제약 #일반의약품 #창고1"
-          text="..."
           variant="tonal">
+          <v-card-title>{{ selectedProductItem.name }}</v-card-title>
+          <v-card-subtitle>{{ selectedProductItem.sequence }}</v-card-subtitle>
+          <v-card-text>{{ selectedProductItem.standardCode }}</v-card-text>
           <v-card-actions>
             <v-btn>Click me</v-btn>
           </v-card-actions>
@@ -55,161 +56,26 @@
     data() {
       return {
         productItems:[],
+        selectedProductItem:{},
       }
     },
     methods:{
       onSearchClick() {
-        this.productItems = [{
-          id : 1,
-          sequence : 1,
-          code: '8806538014616',
-          title:"신일티아민염산염정 10mg",
-          amount: 30
-        },
-        {
-          id : 2,
-          sequence : 2,
-          code: '8806538012316',
-          title:"신일티아민염산염정 20mg",
-          amount: 200
-        }]
-        // this.axios
-        //   .get("https://localhost:8090/ProductItem")
-        //   .then((response) =>{
-        //     this.productItems = response.data
-        //   })
-        //   .catch((error) =>{
-        //   })
-        //   .finally(() =>{
-        //   })
+        // 전역으로 설정 -> Get/Post/Put 함수로 각각 전역 으로 만들것
+        this.axios
+          .get("https://localhost:8090/query?sqlId=product-item")
+          .then((response) =>{
+            this.productItems = response.data
+          })
+          .catch((error) =>{
+          })
+          .finally(() =>{
+          })
+      },
+      onSelectProductItem(item){
+        this.selectedProductItem = item
       }
     },
-
-    // data () {
-    //   return {
-    //     desserts: [
-    //       {
-    //         name: 'Frozen Yogurt',
-    //         calories: 159,
-    //       },
-    //       {
-    //         name: 'Ice cream sandwich',
-    //         calories: 237,
-    //       },
-    //       {
-    //         name: 'Eclair',
-    //         calories: 262,
-    //       },
-    //       {
-    //         name: 'Cupcake',
-    //         calories: 305,
-    //       },
-    //       {
-    //         name: 'Gingerbread',
-    //         calories: 356,
-    //       },
-    //       {
-    //         name: 'Jelly bean',
-    //         calories: 375,
-    //       },
-    //       {
-    //         name: 'Lollipop',
-    //         calories: 392,
-    //       },
-    //       {
-    //         name: 'Honeycomb',
-    //         calories: 408,
-    //       },
-    //       {
-    //         name: 'Donut',
-    //         calories: 452,
-    //       },
-    //       {
-    //         name: 'KitKat',
-    //         calories: 518,
-    //       },{
-    //         name: 'Gingerbread',
-    //         calories: 356,
-    //       },
-    //       {
-    //         name: 'Jelly bean',
-    //         calories: 375,
-    //       },
-    //       {
-    //         name: 'Lollipop',
-    //         calories: 392,
-    //       },
-    //       {
-    //         name: 'Honeycomb',
-    //         calories: 408,
-    //       },
-    //       {
-    //         name: 'Donut',
-    //         calories: 452,
-    //       },
-    //       {
-    //         name: 'KitKat',
-    //         calories: 518,
-    //       },
-    //       {
-    //         name: 'Eclair',
-    //         calories: 262,
-    //       },
-    //       {
-    //         name: 'Cupcake',
-    //         calories: 305,
-    //       },
-    //       {
-    //         name: 'Gingerbread',
-    //         calories: 356,
-    //       },
-    //       {
-    //         name: 'Jelly bean',
-    //         calories: 375,
-    //       },
-    //       {
-    //         name: 'Lollipop',
-    //         calories: 392,
-    //       },
-    //       {
-    //         name: 'Honeycomb',
-    //         calories: 408,
-    //       },
-    //       {
-    //         name: 'Donut',
-    //         calories: 452,
-    //       },
-    //       {
-    //         name: 'KitKat',
-    //         calories: 518,
-    //       },{
-    //         name: 'Gingerbread',
-    //         calories: 356,
-    //       },
-    //       {
-    //         name: 'Jelly bean',
-    //         calories: 375,
-    //       },
-    //       {
-    //         name: 'Lollipop',
-    //         calories: 392,
-    //       },
-    //       {
-    //         name: 'Honeycomb',
-    //         calories: 408,
-    //       },
-    //       {
-    //         name: 'Donut',
-    //         calories: 452,
-    //       },
-    //       {
-    //         name: 'KitKat',
-    //         calories: 518,
-    //       },
-    //     ],
-    //   }
-    // },
-
   }
 </script>
   
